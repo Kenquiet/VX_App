@@ -1,0 +1,52 @@
+.post-auther-date{
+  margin: 10rpx 0 20rpx 10rpx;
+}
+.post-auther{
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+}
+.post-date{
+  vertical-align: middle;
+  margin-left: 20rpx;
+  margin-bottom: 5px;
+  font-size: 26rpx;
+}
+.post-title{
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  margin-left: 10px;/*如果控制两个元素之间水平间距建议使用rpx，如果是垂直间距就使用px，这里只是一个元素控制标题的所以这里保证不会换行*/
+}
+.post-image{
+  margin-left: 16px;
+  width: 100%;
+  height: 400rpx;
+  margin: auto 0;
+  margin-bottom: 15px;
+}
+.psot-text{
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 20px;
+  margin-left: 20rpx;
+  letter-spacing: 2rpx;/*设置文本间距*/
+  line-height: 40rpx;
+}
+.post-like{
+  font-size: 13px;
+  flex-direction: row;
+  line-height: 16px;
+  margin-left:10px;
+}
+.post-like-image{
+  height: 16px;
+  width: 16px;
+  margin-right:8px;
+  vertical-align: middle; 
+}
+.post-like-font{
+  vertical-align: middle;
+  margin-right: 20px;
+}

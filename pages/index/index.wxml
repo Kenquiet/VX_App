@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class='container'>
+  <image class='user-avater' src='/images/kenquiet.png'></image>
+  <text class='user-name'><text style='color:deeppink'>Hellow</text> 静静</text>
+  <view class='moto-wrap' catchtap='onTap' >
+    <text class='moto'>开始小程序之旅</text>
+  </view>
+</view>

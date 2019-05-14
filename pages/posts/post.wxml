@@ -1,0 +1,20 @@
+<import src= "post-item/post-item-template" />
+<view>
+  <swiper indicator-dots='{{true}}' indicator-color='#b3d4db' indicator-active-color='#eee' autoplay='{{true}}' duration='800' circular='{{true}}'>
+    <swiper-item>
+      <image src='/images/wx.png'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/vr.png'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/iqiyi.png'></image>
+    </swiper-item>
+  </swiper>
+
+  <block wx:for="{{post_key}}" wx:for-item="item" wx:key="index">
+    <!--使用 template 模板-->
+    <!--使用 is 等于的是template的 name ，使用data 接收对应下标 item 的数据，来完成for循环  -->
+    <template is="postItem" data="{{item}}" />
+  </block>
+</view>

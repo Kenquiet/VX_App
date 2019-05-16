@@ -1,20 +1,25 @@
 <import src= "post-item/post-item-template" />
 <view>
-  <swiper indicator-dots='{{true}}' indicator-color='#b3d4db' indicator-active-color='#eee' autoplay='{{true}}' duration='800' circular='{{true}}'>
+  <swiper catchtap="onSwiperTap" indicator-dots='{{true}}' indicator-color='#b3d4db' indicator-active-color='#eee' autoplay='{{true}}' duration='800' circular='{{true}}'>
     <swiper-item>
-      <image src='/images/wx.png'></image>
+      <image src='/images/wx.png' data-postId="6"></image>
     </swiper-item>
     <swiper-item>
-      <image src='/images/vr.png'></image>
+      <image src='/images/vr.png' data-postId='3'></image>
     </swiper-item>
     <swiper-item>
-      <image src='/images/iqiyi.png'></image>
+      <image src='/images/iqiyi.png' data-postId='4'></image>
     </swiper-item>
   </swiper>
 
   <block wx:for="{{post_key}}" wx:for-item="item" wx:key="index">
     <!--使用 template 模板-->
     <!--使用 is 等于的是template的 name ，使用data 接收对应下标 item 的数据，来完成for循环  -->
-    <template is="postItem" data="{{item}}" />
+    <!-- 在item 前面加 ...(三个点)，作用就是将接收到的数据进行展开，那么在template中接收到的数据就不需要 item.xxx 这样的形式了，这是使用了es6中的一个小技巧 -->
+    <!-- 自定义属性 data-postId，自定义属性必须要以 data 开头-->
+    <view catchtap="onPostTap" data-postId="{{item.postId}}">
+      <template is="postItem" data="{{...item}}"/>
+    </view>
+    
   </block>
 </view>

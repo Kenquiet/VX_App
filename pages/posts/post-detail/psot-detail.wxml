@@ -1,0 +1,23 @@
+<!--先静后动，先样式再数据-->
+<view class='container'>
+  <image class='head-image' src='{{postData.headImgSrc}}'></image>
+  <image catchtap="onMusictap" class='audio' src='{{!isMusicPlay?"/images/music/music-start.png":"/images/music/music-stop.png"}}'
+  ></image>
+  <view class='auther-date'>
+    <image class='avatar' src='{{postData.avatar}}'></image>
+    <text class='auther'>{{postData.auther}}</text>
+    <text class='const-text'>发表于</text>
+    <text class='date'>{{postData.dateTime}}</text>
+  </view>
+  <text class='title'>{{postData.title}}</text>
+  <view class='tool'>
+    <view class='circle-img'>
+      <!--利用 wx 提供的 if...else 来操作 图片的显示隐藏 -->
+      <image wx:if="{{isCollected}}" catchtap='onCollectionTap' src='/images/icon/collection.png'></image>
+      <image wx:if="{{!isCollected}}" catchtap='onCollectionTap' src='/images/icon/collection-anti.png' ></image>
+      <image catchtap="onShareTap" class="share-img" src='/images/icon/share.png'></image>
+    </view>
+    <view class='horizon'></view>
+  </view>
+  <text class='detail'>{{postData.detail}}</text>
+</view>

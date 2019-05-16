@@ -1,10 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/posts/post"
+    "pages/posts/post",
+    "pages/posts/post-detail/psot-detail"
   ],
   "window": {
-    "navigationBarBackgroundColor": "b3d4db"
+    "navigationBarBackgroundColor": "#dfe4ea"
   },
-  "sitemapLocation": "sitemap55.json"
+  "sitemapLocation": "sitemap85.json"
 }

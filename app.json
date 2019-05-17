@@ -2,10 +2,29 @@
   "pages": [
     "pages/index/index",
     "pages/posts/post",
-    "pages/posts/post-detail/psot-detail"
+    "pages/posts/post-detail/psot-detail",
+    "pages/movies/movie"
   ],
   "window": {
     "navigationBarBackgroundColor": "#dfe4ea"
   },
-  "sitemapLocation": "sitemap85.json"
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/posts/post",
+        "text": "文静",
+        "iconPath": "/images/tab/yuedu.png",
+        "selectedIconPath": "/images/tab/yuedu_hl.png"
+      },
+      {
+        "pagePath": "pages/movies/movie",
+        "text": "电影",
+        "iconPath": "/images/tab/dianying.png",
+        "selectedIconPath": "/images/tab/dianying_hl.png"
+      }
+    ],
+    "backgroundColor": "#dfe4ea",
+    "borderStyle":"white"
+  },
+  "sitemapLocation": "sitemap44.json"
 }

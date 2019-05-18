@@ -21,6 +21,15 @@ Page({
     this.getMovieListData(comingSoonUrl,"comingSoon","即将上映");
     this.getMovieListData(top250Url,"top250","豆瓣top250");
   },
+  // 更多跳转的js逻辑事件跳转
+  onMoreTap:function(event){
+    //获取用户当前点击的哪个更多
+    let category = event.currentTarget.dataset.category;
+    wx.navigateTo({
+      // 在点击跳转链接里面加入 catetoryTitle 让他成为独一无二的，这样我们就知道用户点击的是哪个更多了
+      url: 'more-movie/more-movie?category=' + category,
+    })
+  },
 
   //访问豆瓣 api 的一个公共方法，setterKey 就是为了知道我们处理的是哪个数据
   getMovieListData: function (url, setterKey, catetoryTitle) {
@@ -34,7 +43,7 @@ Page({
         "content-Type": "application/xml"
       },
       success: function(res) {
-        console.log(res);
+        //console.log(res);
         that.processDoubanData(res.data, setterKey, catetoryTitle);
       },
       fail: function(error) {

@@ -6,6 +6,7 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
+		"enhance": false,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
@@ -23,7 +24,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.7.0",
 	"appid": "wxf6c26fead05f3883",
 	"projectname": "App_demo",
 	"debugOptions": {

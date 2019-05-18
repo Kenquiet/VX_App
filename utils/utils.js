@@ -10,7 +10,26 @@ function converToStarsArray(stars){
   }
   return arrary;
 }
+//访问豆瓣 api 的一个公共方法，setterKey 就是为了知道我们处理的是哪个数据
+function http(url,callBack) {
+  wx.request({
+    url,
+    //url: 'https://douban.uieee.com/v2/movie/top250',
+    method: "GET",
+    header: {
+      "content-Type": "application/xml"
+    },
+    success: function (res) {
+      callBack(res.data)
+    },
+    fail: function (error) {
+      // 断网了才会走 fail
+      console.log("调用失败~");
+    }
+  })
+}
 // 将函数开放接口，输出
 module.exports = {
-  converToStarsArray
+  converToStarsArray,
+  http
 }

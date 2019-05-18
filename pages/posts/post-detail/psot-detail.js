@@ -57,13 +57,22 @@ Page({
       app.globaData.g_isMusicPlay = true;
       app.g_currentMusicPostId = that.data.index;
     });
+    // 监听音乐暂停事件
     wx.onBackgroundAudioPause(() => {
       that.setData({
         isMusicPlay: false
-      })
+      });
+      app.globaData.g_isMusicPlay = false;
+      app.g_currentMusicPostId = null;
     });
-    app.globaData.g_isMusicPlay = false;
-    app.g_currentMusicPostId = null;
+    //音乐播放完成时间
+    wx.onBackgroundAudioStop(() => {
+      that.setData({
+        isMusicPlay: false
+      });
+      app.globaData.g_isMusicPlay = false;
+      app.g_currentMusicPostId = null;
+    })
   },
   onCollectionTap(event){
     let isCollected = !this.data.isCollected;

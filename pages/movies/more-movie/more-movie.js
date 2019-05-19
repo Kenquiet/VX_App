@@ -49,6 +49,7 @@ Page({
     let refreshUrl = this.data.requestUrl + "?start=0&count=20";
     this.data.movies = {} ;// 将状态置空，不然会出现重复不信去除试试看
     this.data.isEmpty = true;
+    this.data.totalCount = 0;
     util.http(refreshUrl, this.processDoubanData);
   },
   // 上拉加载

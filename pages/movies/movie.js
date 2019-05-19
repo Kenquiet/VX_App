@@ -33,7 +33,13 @@ Page({
       url: 'more-movie/more-movie?category=' + category,
     })
   },
-
+  // 跳转详细信息页面
+  onMovieDetailTap:function(event){
+    let movieId = event.currentTarget.dataset.movieid
+    wx.navigateTo({
+      url: 'movie-detail/movie-detial?id=' + movieId,
+    })
+  },
   //访问豆瓣 api 的一个公共方法，setterKey 就是为了知道我们处理的是哪个数据
   getMovieListData: function(url, setterKey, catetoryTitle) {
     let that = this;

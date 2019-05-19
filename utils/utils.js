@@ -28,8 +28,28 @@ function http(url,callBack) {
     }
   })
 }
+function converToStarsString(casts){
+  let castsjoin = "";
+  for(let idx in casts){
+    castsjoin = castsjoin + casts[idx].name + "/"; //演员的名字拼起来
+  }
+  return castsjoin.substring(0,castsjoin.length-2); //最后将最后的斜杠去除掉
+}
+function converToCastInfos(casts){
+  let castsArray = []
+  for (let idx in casts){
+    let cast ={
+      img: casts[idx].avatars ? casts[idx].avatars.large : "",
+      name : casts[idx].name
+    }
+    castsArray.push(cast);
+  }
+  return castsArray;
+}
 // 将函数开放接口，输出
 module.exports = {
   converToStarsArray,
-  http
+  http,
+  converToStarsString,
+  converToCastInfos
 }
